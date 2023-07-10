@@ -5,4 +5,4 @@ All work contained in this project was completed as part of the curriculum for t
 ## Projects
 Project name | Description |
 | ------------ | ----------- |
-| [`0x00-hello_world`](https://github.com/Joumanasalahedin/alx-higher_level_programming) | About variables, basics commands (print) and handle strings with **Python** |
+| [`0x00-hello_world`](https://github.com/Joumanasalahedin/alx-higher_level_programming/tree/main/0x00-python-hello_world) | About variables, basics commands (print) and handle strings with **Python** |
