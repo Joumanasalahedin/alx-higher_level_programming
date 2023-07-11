@@ -6,7 +6,3 @@ def uppercase(str):
             letter = chr(ord(letter) - 32)
         new += letter
     print("{}".format(new))
-
-
-uppercase("Holberton")
-uppercase("Best School 98 Battery street")
