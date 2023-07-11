@@ -4,3 +4,4 @@ def print_last_digit(number):
     if number < 0:
         last_digit = -last_digit
     print(last_digit)
+    return last_digit
