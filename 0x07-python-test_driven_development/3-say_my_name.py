@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Module that consists of a function that prints My name is <first name> <last name>
+Module that consists of a function that prints
+My name is <first name> <last name>
 """
 
 
