@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" Module that adds all arguments to a Python list
+them saves them to a JSON file """
 import json
 from sys import argv
 import os
