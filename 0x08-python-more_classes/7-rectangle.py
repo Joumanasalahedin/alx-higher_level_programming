@@ -79,11 +79,3 @@ class Rectangle:
         """ Prints message when an instance of Rectangle is deleted """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
-
-my_rectangle_1 = Rectangle(8, 4)
-print(my_rectangle_1)
-print("--")
-my_rectangle_1.print_symbol = "&"
-print(my_rectangle_1)
-print("--")
