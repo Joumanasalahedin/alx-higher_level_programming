@@ -9,9 +9,10 @@ class TestMaxInteger(unittest.TestCase):
     """Test cases for max_integer"""
 
     def test_max(self):
-        result = max_integer([2, 5, 10])
-        self.assertEqual(result, 10)
+        self.assertEqual(max_integer([2, 5, 10]), 10)
 
+    def test_empty(self):
+        self.assertEqual(max_integer([]), None)
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_negative(self):
+        self.assertEqual(max_integer([0, -15, 25, -5, 17]), 25)
