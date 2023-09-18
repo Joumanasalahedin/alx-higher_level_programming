@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module with function that prints a text with 
+""" Module with function that prints a text with
 2 new lines after certain characters """
 
 
