@@ -57,4 +57,3 @@ Checking for non-integer types:
     >>> bgy.integer_validator("None", None)
     Traceback (most recent call last):
     TypeError: None must be an integer
-
