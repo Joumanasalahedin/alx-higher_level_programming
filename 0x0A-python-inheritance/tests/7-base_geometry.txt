@@ -11,25 +11,50 @@ First import the function
 Now test it
 
 Checking area failure
-    >>> bg = BaseGeometry()
-    >>> bg.area()
+    >>> bgy = BaseGeometry()
+    >>> bgy.area()
     Traceback (most recent call last):
     Exception: area() is not implemented
 
 Checking integer_validator
-    >>> bg.integer_validator("my_int", 12)
+    >>> bgy.integer_validator("my_int", 12)
 
 Checking when value is 0
-    >>> bg.integer_validator("zero", 0)
+    >>> bgy.integer_validator("zero", 0)
     Traceback (most recent call last):
     ValueError: zero must be greater than 0
 
 Checking when value < 0:
-    >>> bg.integer_validator("negative", -15)
+    >>> bgy.integer_validator("negative", -15)
     Traceback (most recent call last):
     ValueError: negative must be greater than 0
 
 Checking for non-integer types:
-    >>> bg.integer_validator("float", 1.5)
+    >>> bgy.integer_validator("float", 1.5)
     Traceback (most recent call last):
     TypeError: float must be an integer
+
+    >>> bgy.integer_validator("age", "4")
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+    >>> bgy.integer_validator("age", (4,))
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+    >>> bgy.integer_validator("list", [3])
+    Traceback (most recent call last):
+    TypeError: list must be an integer
+
+    >>> bgy.integer_validator("bool", True)
+    Traceback (most recent call last):
+    TypeError: bool must be an integer
+
+    >>> bgy.integer_validator("age", [3, 4])
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+    >>> bgy.integer_validator("None", None)
+    Traceback (most recent call last):
+    TypeError: None must be an integer
+
