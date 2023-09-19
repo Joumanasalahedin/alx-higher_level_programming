@@ -50,7 +50,7 @@ Checking for non-integer types:
     Traceback (most recent call last):
     TypeError: bool must be an integer
 
-    >>> bgy.integer_validator("age", [3, 4])
+    >>> bgy.integer_validator("age", {3, 4})
     Traceback (most recent call last):
     TypeError: age must be an integer
 
