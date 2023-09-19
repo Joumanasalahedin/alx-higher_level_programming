@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module with class Rectangle inheirted from Base"""
 
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -70,3 +70,19 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """Returns area of rectangle"""
+        return self.width * self.height
+
+    def display(self):
+        rectangle = ''
+        if self.width == 0 or self.height == 0:
+            return rectangle
+
+        for _ in range(self.height):
+            for _ in range(self.width):
+                rectangle += '#'
+            rectangle += '\n'
+
+        print(rectangle[:-1])
