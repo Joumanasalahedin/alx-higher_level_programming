@@ -55,5 +55,5 @@ class Base:
         else:
             new = cls(5)
 
-        new = cls.update(**dictionary)
+        new.update(**dictionary)
         return new
