@@ -99,3 +99,10 @@ class Rectangle(Base):
         xy = f"{self.x}/{self.y}"
         wh = f"{self.width}/{self.height}"
         return f"[Rectangle] {id} {xy} - {wh}"
+
+    def update(self, *args):
+        """Updates instance attributes"""
+        atr = ['id', 'width', 'height', 'x', 'y']
+        if args is not None and len(args) is not 0:
+            for i in range(len(args)):
+                setattr(self, atr[i], args[i])

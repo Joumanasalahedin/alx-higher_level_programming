@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Module for test Rectangle class"""
-import io
+from io import StringIO
 import sys
 import unittest
+from unittest.mock import patch
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -38,3 +39,18 @@ class TestRectangleMethods(unittest.TestCase):
             new = Rectangle()
         with self.assertRaises(TypeError):
             new = Rectangle(5)
+
+    def test_area(self):
+        """ Checking the return value of area method """
+        new = Rectangle(10, 5)
+        self.assertEqual(new.area(), 50)
+        new1 = Rectangle(5, 3)
+        self.assertEqual(new1.area(), 15)
+
+    def test_display_3(self):
+        """ Test string printed """
+        r1 = Rectangle(5, 4, 1, 1)
+        res = "\n #####\n #####\n #####\n #####\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
