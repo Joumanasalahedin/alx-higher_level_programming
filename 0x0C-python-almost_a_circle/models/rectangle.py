@@ -82,7 +82,11 @@ class Rectangle(Base):
         if self.width == 0 or self.height == 0:
             return rectangle
 
+        rectangle += '\n' * self.y
+
         for _ in range(self.height):
+            for _ in range(self.x):
+                rectangle += ' '
             for _ in range(self.width):
                 rectangle += '#'
             rectangle += '\n'
