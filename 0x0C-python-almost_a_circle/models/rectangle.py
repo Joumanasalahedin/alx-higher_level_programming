@@ -109,3 +109,13 @@ class Rectangle(Base):
 
         for key, value, in kwargs.items():
             setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns a dictionary with attributes"""
+        atr = ['id', 'width', 'height', 'x', 'y']
+        dict_res = {}
+
+        for key in atr:
+            dict_res[key] = getattr(self, key)
+
+        return dict_res
