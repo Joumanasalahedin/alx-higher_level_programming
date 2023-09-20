@@ -17,3 +17,17 @@ class TestBaseMethods(unittest.TestCase):
         """ Test assigned id """
         new = Base(1)
         self.assertEqual(new.id, 1)
+
+    def test_id_default(self):
+        """ Test default id """
+        new = Base()
+        self.assertEqual(new.id, 1)
+
+    def test_id_mix(self):
+        """ Test nb object attributes and assigned id """
+        new = Base()
+        new2 = Base(700)
+        new3 = Base()
+        self.assertEqual(new.id, 1)
+        self.assertEqual(new2.id, 700)
+        self.assertEqual(new3.id, 2)
