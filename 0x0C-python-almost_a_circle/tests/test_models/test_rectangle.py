@@ -22,3 +22,19 @@ class TestRectangleMethods(unittest.TestCase):
         self.assertEqual(new.x, 0)
         self.assertEqual(new.y, 0)
         self.assertEqual(new.id, 1)
+
+    def test_new_rectangle2(self):
+        """ Test new rectangle """
+        new = Rectangle(5, 4, 3, 0, 18)
+        self.assertEqual(new.width, 5)
+        self.assertEqual(new.height, 4)
+        self.assertEqual(new.x, 3)
+        self.assertEqual(new.y, 0)
+        self.assertEqual(new.id, 18)
+
+    def test_wrong_number_attrs(self):
+        """ Test error raised with wrong number of args """
+        with self.assertRaises(TypeError):
+            new = Rectangle()
+        with self.assertRaises(TypeError):
+            new = Rectangle(5)
