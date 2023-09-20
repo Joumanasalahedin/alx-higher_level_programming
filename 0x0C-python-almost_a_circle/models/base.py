@@ -70,7 +70,7 @@ class Base:
             list_cls = cls.from_json_string(content)
             instances = []
             for i in range(len(list_cls)):
-                instances.append(cls.create(**list_cls[index]))
+                instances.append(cls.create(**list_cls[i]))
 
             return instances
 
