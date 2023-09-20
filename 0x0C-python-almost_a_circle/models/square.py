@@ -55,8 +55,8 @@ class Square(Rectangle):
 
         for key in atr:
             if key == 'size':
-                dict_res[key] = setattr(self, 'width')
+                dict_res[key] = getattr(self, 'width')
             else:
-                dict_res[key] = setattr(self, key)
+                dict_res[key] = getattr(self, key)
 
         return dict_res
