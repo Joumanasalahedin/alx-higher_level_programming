@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module with class Base"""
 import json
+import csv
 
 
 class Base:
@@ -76,3 +77,45 @@ class Base:
 
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves object in CSV file"""
+        filename = f"{cls.__name__}.csv"
+
+        with open(filename, 'w') as file:
+            writer = csv.writer(file)
+
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    writer.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y])
+                if cls.__name__ == "Square":
+                    writer.writerow(
+                        [obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads instances from CSV file"""
+        filename = f"{cls.__name__}.json"
+        objects = []
+
+        with open(filename, 'r') as file:
+            reader = csv.reader(file)
+            for line in reader:
+                if cls.__name__ == "Rectangle":
+                    list_cls = {"id": int(line[0]),
+                                "width": int(line[1]),
+                                "height": int(line[2]),
+                                "x": int(line[3]),
+                                "y": int(line[4])}
+                if cls.__name__ == "Square":
+                    list_cls = {"id": int(line[0]),
+                                "size": int(line[1]),
+                                "x": int(line[2]),
+                                "y": int(line[3])}
+
+                content = cls.create(**list_cls)
+                objects.append(content)
+
+        return objects
