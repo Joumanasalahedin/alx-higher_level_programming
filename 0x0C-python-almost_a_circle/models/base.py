@@ -2,6 +2,8 @@
 """Module with class Base"""
 import json
 import csv
+import turtle as t
+import random
 
 
 class Base:
@@ -119,3 +121,36 @@ class Base:
                 objects.append(content)
 
         return objects
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Opens a window and draws all the Rectangles & Squares"""
+        timmy = t.Turtle()
+        timmy.shape("turtle")
+        timmy.color("maroon")
+        colors = ['black', 'dark gray', 'light steel blue', 'royal blue',
+                  'navy', 'forest green', 'lime green', 'pale green']
+
+        for rectangle in list_rectangles:
+            timmy.color(random.choice(colors))
+            timmy.penup()
+            timmy.goto(rectangle.x, rectangle.y)
+            timmy.pendown()
+            for _ in range(2):
+                timmy.forward(rectangle.width)
+                timmy.left(90)
+                timmy.forward(rectangle.height)
+                timmy.left(90)
+
+        for square in list_squares:
+            timmy.color(random.choice(colors))
+            timmy.penup()
+            timmy.goto(square.x, square.y)
+            timmy.pendown()
+            for _ in range(2):
+                timmy.forward(square.width)
+                timmy.left(90)
+                timmy.forward(square.height)
+                timmy.left(90)
+        screen = t.Screen()
+        screen.exitonclick
