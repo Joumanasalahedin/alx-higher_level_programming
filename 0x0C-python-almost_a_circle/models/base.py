@@ -83,7 +83,7 @@ class Base:
         """Saves object in CSV file"""
         filename = f"{cls.__name__}.csv"
 
-        with open(filename, 'w') as file:
+        with open(filename, 'w', newline='') as file:
             writer = csv.writer(file)
 
             for obj in list_objs:
@@ -97,10 +97,10 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Loads instances from CSV file"""
-        filename = f"{cls.__name__}.json"
+        filename = f"{cls.__name__}.csv"
         objects = []
 
-        with open(filename, 'r') as file:
+        with open(filename, 'r', newline="") as file:
             reader = csv.reader(file)
             for line in reader:
                 if cls.__name__ == "Rectangle":
