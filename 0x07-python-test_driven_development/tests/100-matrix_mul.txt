@@ -22,8 +22,8 @@ Now test it
     [[58, 64], [139, 154]]
 
     2 matrices can't be multiplied
-    >>> matrix_e = [[1, 2], [3, 4]]
-    >>> matrix_f = [[5, 6, 7], [8, 9, 10]]
+    >>> matrix_e = [[5, 6, 7], [8, 9, 10]]
+    >>> matrix_f = [[1, 2], [3, 4]]
     >>> matrix_mul(matrix_e, matrix_f)
     Traceback (most recent call last):
     ValueError: m_a and m_b can't be multiplied
@@ -46,7 +46,7 @@ Now test it
 
     >>> matrix_mul([[9, 4], [2]], [[1, 2], [4, 9]])
     Traceback (most recent call last):
-    TypeError: each row of m_a must should be of the same size
+    TypeError: each row of m_a must be of the same size
 
     >>> matrix_mul([[9, 4, 4], [2, 8, 2]])
     Traceback (most recent call last):
