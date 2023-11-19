@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Deletes all states with the letter a in the database hbtn_0e_6_usa"""
+"""Prints all cities in the database hbtn_0e_6_usa"""
 from model_state import Base, State
 from model_city import City
 import sys
