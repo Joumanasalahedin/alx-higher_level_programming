@@ -8,7 +8,8 @@ if __name__ == '__main__':
                          passwd=sys.argv[2],
                          db=sys.argv[3], port=3306)
     cur = db.cursor()
-    cur.execute("Select * FROM states WHERE name LIKE 'N% ORDER BY id ASC")
+    cur.execute(
+        "Select * FROM states WHERE name BINARY LIKE 'N% ORDER BY states.id ASC")
     states = cur.fetchall()
 
     for state in states:
