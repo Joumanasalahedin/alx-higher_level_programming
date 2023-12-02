@@ -1,4 +1,4 @@
-# /usr/bin/python3
+#!/usr/bin/python3
 """sends a request to URL and displays body"""
 from sys import argv
 import urllib.request
