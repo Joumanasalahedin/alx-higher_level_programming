@@ -1,14 +1,13 @@
 #!/usr/bin/node
 const request = require('request');
-const apiURL = process.argv[2]; // Get the API URL from command line argument
+const apiURL = process.argv[2];
 
-request(apiURL, { json: true }, (err, res, body) => {
+request(apiURL, function (err, res, body) {
   if (err == null) {
-    const wedgeAntillesId = 18;
     let count = 0;
-
-    body.results.forEach(film => {
-      if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${wedgeAntillesId}/`)) {
+    const data = JSON.parse(body);
+    data.results.forEach(film => {
+      if (film.characters.some(characterUrl => characterUrl.endsWith('/18/'))) {
         count++;
       }
     });
